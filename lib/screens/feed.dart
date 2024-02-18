@@ -22,7 +22,7 @@ class Feed extends HookConsumerWidget {
     final user = ref.watch(userState);
     late IO.Socket socket;
     useEffect(() {
-      socket = IO.io('http://localhost:8080', <String, dynamic>{
+      socket = IO.io(SOCKET_URL, <String, dynamic>{
         'transports': ['websocket'],
         'autoConnect': true,
       });
